@@ -22,6 +22,11 @@ img {
     height: auto;
 }
 
+.logo {
+	width: 200px;
+    height: 200px;
+}
+
 // Header
 .header {
     padding: 10em 0 14em;
@@ -34,6 +39,10 @@ img {
 .avatar {
     @include box-shadow(0 0 0px 3px #fff, 0 0 0 4px #ccc, 0 4px 6px #333);
     @include border-radius(50px); // half the avatar size
+    position: relative;
+    top: -50px;
+    @include transition-property(top);
+ 	@include transition-duration(2s);
     width: 100px;
     height: 100px;
 }

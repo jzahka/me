@@ -1,0 +1,84 @@
+/* line 1, ../app/assets/stylesheets/styles/welcome.scss */
+h1 {
+  font-family: Bitter, Georgia, serif;
+  font-size: 2.25em;
+  padding: 0 1em;
+}
+
+/* line 7, ../app/assets/stylesheets/styles/welcome.scss */
+body {
+  text-align: center;
+  font: 1em/1.5 Georgia, serif;
+  color: #333;
+}
+
+/* line 13, ../app/assets/stylesheets/styles/welcome.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 17, ../app/assets/stylesheets/styles/welcome.scss */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 22, ../app/assets/stylesheets/styles/welcome.scss */
+.logo {
+  width: 200px;
+  height: 200px;
+}
+
+/* line 28, ../app/assets/stylesheets/styles/welcome.scss */
+.header {
+  padding: 10em 0 14em;
+}
+/* line 31, ../app/assets/stylesheets/styles/welcome.scss */
+.header h1 {
+  font-style: italic;
+}
+
+/* line 36, ../app/assets/stylesheets/styles/welcome.scss */
+.avatar {
+  /*@include box-shadow(0 0 0px 3px #fff, 0 0 0 4px #ccc, 0 4px 6px #333);*/
+  /*@include border-radius(50px); // half the avatar size*/
+  position: relative;
+  top: -50px;
+  /*@include transition-property(top);*/
+  /*@include transition-duration(2s);*/
+  width: 100px;
+  height: 100px;
+}
+
+/* line 48, ../app/assets/stylesheets/styles/welcome.scss */
+.footer p {
+  color: #777;
+  padding: 0 1em;
+}
+
+/* line 54, ../app/assets/stylesheets/styles/welcome.scss */
+.header,
+.footer {
+  background: #f7f7f7;
+}
+
+/* line 59, ../app/assets/stylesheets/styles/welcome.scss */
+.content,
+.footer {
+  padding: 4em 0 6em;
+}
+
+/* line 64, ../app/assets/stylesheets/styles/welcome.scss */
+.content {
+  border-top: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
+}
+/* line 69, ../app/assets/stylesheets/styles/welcome.scss */
+.content h1 {
+  color: #ea4c89;
+}
+/* line 73, ../app/assets/stylesheets/styles/welcome.scss */
+.content > p {
+  font-size: .85em;
+  color: #aaa;
+}

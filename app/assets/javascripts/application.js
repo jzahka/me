@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require typed
+//= require bootstrap-sprockets
+//= ––– add plugins above here ––––
 //= require_tree .

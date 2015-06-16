@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  up_votes: 1
+  down_votes: 1
+  enabled: false
+
+two:
+  name: MyText
+  up_votes: 1
+  down_votes: 1
+  enabled: false

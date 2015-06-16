@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= yield :javascripts %>
+<%= javascript_tag do %>
+$(document).ready(function() {
+  <%= yield :document_ready %>
+});
+<% end %>
 <%= yield %>
 
 </body>

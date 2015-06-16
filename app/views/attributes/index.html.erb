@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>John Zahka's Homepage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <span class="attribute_name"></span>
+  <div class="vote chev">
+    <div class="increment up"></div>
+    <div class="increment down"></div>
+  </div>
+  <div class="vote sign"></div>
+  <% @attributes.each do |a| %>
+    <%= div_for(a, class: "count") do %>
+      <%= a.net_votes %>
+    <% end %>
+  <% end %>
+
+  <div class="suggest">
+    <%= form_for(@attribute, remote: true) do |f| %>
+        <%= f.text_field :name %>
+        <%= f.submit %>
+    <% end %>
+  </div>
+</body>
+</html>
+
+<% content_for :document_ready do %>
+    Attributes.init(<%= @attributes.map(&:name).to_json.html_safe %>);
+<% end %>

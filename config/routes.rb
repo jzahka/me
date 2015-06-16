@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'attributes#index'
+  resources :attributes, only: [:index, :create, :update]
 end

@@ -10,13 +10,14 @@ class AttributesController < ApplicationController
 
   def update
     attribute = Attribute.find(params[:id])
-    if params[:up_vote] == 'true'
+    case params[:vote]
+    when 'up'
       attribute.up_votes += 1
-    else
+    when 'down'
       attribute.down_votes += 1
     end
     attribute.save!
-    render nothing: true
+    render json: { id: attribute.id, net: attribute.net_votes }
   end
 
   private

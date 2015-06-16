@@ -22,6 +22,10 @@
 
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
 
+#voting_icon {
+  text-align:center;
+}
+
 .chev {
   font-size: 40px;
 }
@@ -39,4 +43,19 @@
 .count {
   font-family: "Noto Sans";
   font-size: 25px;
+}
+
+#voting_sign {
+  position: relative;
+  top: 25px;
+  font-family: "Noto Sans";
+  font-size: 40px;
+  text-align:center;
+}
+
+#typed {
+  position: relative;
+  top: 25px;
+  font-family: "Noto Sans";
+  font-size: 40px;
 }

@@ -17,31 +17,35 @@
   <body>
     <div id="main-container" class="container-fluid">
       <div class="row">
+        <div class="col-xs-3"></div>
         <div id="typed" class="col-xs-3">
           <span class="attribute_name"></span>
         </div>
-        <div id="voting" class="col-xs-9">
-          <div class="row">
-            <span class="glyphicon glyphicon-chevron-up chev up" aria-hidden="true"></span>
-          </div>
-          <div class="row">
-            <% @attributes.each do |a| %>
-              <%= div_for(a, class: "count") do %>
-                <%= a.net_votes %>
+        <div id="voting" class="col-xs-3">
+          <div id="voting_icon" style="display: none;">
+            <div class="row">
+              <span class="glyphicon glyphicon-chevron-up chev up" aria-hidden="true"></span>
+            </div>
+            <div class="row">
+              <% @attributes.each do |a| %>
+                <%= div_for(a, class: "count") do %>
+                  <%= a.net_votes %>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
+            <div class="row">
+              <span class="glyphicon glyphicon-chevron-down chev down" aria-hidden="true"></span>
+            </div>
           </div>
-          <div class="row">
-            <span class="glyphicon glyphicon-chevron-down chev down" aria-hidden="true"></span>
-          </div>
-          <div class="vote sign"></div>
+          <div id="voting_sign"></div>
         </div>
+        <div class="col-xs-3"></div>
       </div>
       <div class="row">
         <div class="suggest">
           <%= form_for(@attribute, remote: true) do |f| %>
-              <%= f.text_field :name %>
-              <%= f.submit %>
+              <%= f.text_field :name, placeholder: @attributes.sample.name %>
+              <%= f.submit :suggest %>
           <% end %>
         </div>
       </div>

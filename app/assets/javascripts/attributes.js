@@ -11,10 +11,13 @@
             strings: attribute_names,
             typeSpeed: 20,
             backDelay: 2000,
+            startDelay: 1000,
             loop: true,
             preStringTyped: function(pos) {
-                $(".count:visible").hide();
+                $(".count").hide();
                 $(".count").slice(pos, pos+1).show();
+                $("#voting_sign").hide();
+                $("#voting_icon").fadeIn(500);
             }
         });
     }
@@ -22,16 +25,19 @@
     function initVoting() {
         $(".up").click(function (){
             vote('up');
+            fadeOut('+')
         });
         $(".down").click(function (){
             vote('down');
+            fadeOut('–')
         });
     }
 
-    function fade_out(selector) {
-        $(".voting:visible").hide();
-        selector.show();
-        selector.fadeOut(2000);
+    function fadeOut(sign) {
+        $("#voting_sign").text(sign);
+        $("#voting_icon").hide();
+        $("#voting_sign").show();
+        $("#voting_sign").fadeOut(2000);
     }
 
     function vote(direction) {

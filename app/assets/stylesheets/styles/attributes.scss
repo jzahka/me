@@ -22,7 +22,22 @@
 
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
 
+.row {
+  text-align:center;
+}
+
+#intro {
+  padding: 20px;
+  font-family: "Noto Sans";
+  font-size: 40px;
+}
+
+#vote_row {
+  height: 200px;
+}
+
 #voting_icon {
+  position: relative;
   text-align:center;
 }
 
@@ -49,13 +64,88 @@
   position: relative;
   top: 25px;
   font-family: "Noto Sans";
-  font-size: 40px;
+  font-size: 60px;
   text-align:center;
 }
 
 #typed {
   position: relative;
-  top: 25px;
+  top: 30px;
   font-family: "Noto Sans";
   font-size: 40px;
+  text-align:center;
+}
+
+.input-group {
+  margin: 0 auto;
+  float: none;
+  max-width: 400px;
+}
+
+#suggest {
+  position: relative;
+  top: 30px;
+}
+
+.image {
+  padding: 20px;
+}
+
+#me {
+  border-radius: 25px;
+  border: 5px solid #8AC007;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+.social {
+    position: relative;
+    top: 30px;
+    text-align: center;
+}
+
+.social ul {
+    margin: 0;
+    padding: 5px;
+}
+
+.social ul li {
+    margin: 5px;
+    list-style: none outside none;
+    display: inline-block;
+}
+
+.social i {
+    width: 40px;
+    height: 40px;
+    color: #FFF;
+    background-color: #909AA0;
+    font-size: 22px;
+    text-align:center;
+    padding-top: 12px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+}
+
+.social i:hover {
+    color: #FFF;
+    text-decoration: none;
+    transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
 }

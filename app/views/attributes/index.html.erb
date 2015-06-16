@@ -13,15 +13,19 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body>
     <div id="main-container" class="container-fluid">
-      <div class="row">
-        <div class="col-xs-3"></div>
-        <div id="typed" class="col-xs-3">
-          <span class="attribute_name"></span>
-        </div>
-        <div id="voting" class="col-xs-3">
+      <div class="image row">
+        <%= image_tag "me.JPG", id: 'me', class: "img-responsive" %>
+      </div>
+      <div id="intro" class ="row">
+        <span>Endorse Me!</span>
+      </div>
+      <div id='vote_row' class="row">
+        <div class = "col-md-3"></div>
+        <div id="voting" class="col-xs-12 col-md-1">
           <div id="voting_icon" style="display: none;">
             <div class="row">
               <span class="glyphicon glyphicon-chevron-up chev up" aria-hidden="true"></span>
@@ -39,15 +43,31 @@
           </div>
           <div id="voting_sign"></div>
         </div>
-        <div class="col-xs-3"></div>
-      </div>
-      <div class="row">
-        <div class="suggest">
-          <%= form_for(@attribute, remote: true) do |f| %>
-              <%= f.text_field :name, placeholder: @attributes.sample.name %>
-              <%= f.submit :suggest %>
-          <% end %>
+        <div class="col-xs-12 col-md-4">
+          <div id="typed">
+            <span class="attribute_name"></span>
+          </div>
+          <div id="suggest">
+            <%= form_for(@attribute, remote: true) do |f| %>
+              <div class="input-group">
+                <span class="input-group-btn">
+                <%= f.submit :suggest, class: "btn btn-default" %>
+                </span>
+                <%= f.text_field :name, placeholder: @attributes.sample.name, class: "form-control" %>
+              </div>
+            <% end %>
+          </div>
         </div>
+      </div>
+      <div class="row social">
+        <ul>
+          <li><a href="https://www.facebook.com/john.zahka"><i class="fa fa-lg fa-facebook"></i></a></li>
+          <li><a href="https://github.com/jzahka"><i class="fa fa-lg fa-github"></i></a></li>
+          <li><a href="https://www.linkedin.com/pub/john-zahka/3a/26/821"><i class="fa fa-lg fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+      <div class="image row">
+        <%= image_tag "logo.svg", id: 'logo', class: "img-responsive" %>
       </div>
     </div>
   </body>

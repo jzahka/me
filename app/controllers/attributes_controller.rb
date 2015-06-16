@@ -1,11 +1,12 @@
 class AttributesController < ApplicationController
   def index
     @attribute = Attribute.new
-    @attributes = Attribute.where(enabled: true).order(:id).all
+    @attributes = Attribute.where(enabled: true).all.shuffle
   end
 
   def create
     Attribute.create(create_attribute_params)
+    render nothing: true
   end
 
   def update

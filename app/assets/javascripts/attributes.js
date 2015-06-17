@@ -4,6 +4,7 @@
     function init(attribute_names) {
         initTyped(attribute_names);
         initVoting();
+        initSuggest();
     }
 
     function initTyped(attribute_names) {
@@ -14,6 +15,7 @@
             startDelay: 1000,
             loop: true,
             preStringTyped: function(pos) {
+                $("#attribute_name").prop('disabled', false);
                 $(".count").hide();
                 $(".count").slice(pos, pos+1).show();
                 $("#voting_sign").hide();
@@ -25,16 +27,25 @@
     function initVoting() {
         $(".up").click(function (){
             vote('up');
-            fadeOut('+')
+            fadeOut('+', '#009999')
         });
         $(".down").click(function (){
             vote('down');
-            fadeOut('–')
+            fadeOut('–', '#FF5050')
         });
     }
 
-    function fadeOut(sign) {
+    function initSuggest() {
+        $("#new_attribute").on("ajax:success", function () {
+            $("#attribute_name").prop('disabled', true);
+            $("#attribute_name").val('');
+            $("#attribute_name").attr('placeholder', '');
+        });
+    }
+
+    function fadeOut(sign, color) {
         $("#voting_sign").text(sign);
+        $("#voting_sign").css('color', color);
         $("#voting_icon").hide();
         $("#voting_sign").show();
         $("#voting_sign").fadeOut(2000);

@@ -79,7 +79,6 @@ $c-second: #4C5173;
   position: relative;
   top: 20px;
   font-size: 60px;
-  color: $c-prim;
 }
 
 #voting {
@@ -96,6 +95,16 @@ $c-second: #4C5173;
   margin: 0 auto;
   float: none;
   max-width: 400px;
+}
+
+#attribute_name:disabled {
+  border-color: $c-prim;
+  border-width: 4px;
+  transition: all ease 1s;
+  -moz-transition: all ease 1s;
+  -webkit-transition: all ease 1s;
+  -o-transition: all ease 1s;
+  -ms-transition: all ease 1s;
 }
 
 .btn-default {

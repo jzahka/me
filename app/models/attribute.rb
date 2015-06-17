@@ -1,6 +1,7 @@
 class Attribute < ActiveRecord::Base
-  before_save Proc.new { |a| a.name = a.name.titleize }
+  before_validation Proc.new { |a| a.name = a.name.titleize }
 
+  validates_uniqueness_of :name
   def net_votes
     up_votes - down_votes
   end

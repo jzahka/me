@@ -6,6 +6,7 @@ class AttributesController < ApplicationController
 
   def create
     Attribute.create(create_attribute_params)
+    # don't care if save was successful
     render nothing: true
   end
 

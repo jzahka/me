@@ -17,20 +17,20 @@
   </head>
   <body>
     <div id="main-container" class="container-fluid">
-      <div class="image row">
-        <%= image_tag "me.JPG", id: 'me', class: "img-responsive" %>
+      <div class="main_row row">
+        <%= image_tag "banner.jpg", id: 'banner', class: "img-responsive" %>
       </div>
-      <div id="intro" class ="row">
-        <span>Endorse Me!</span>
+      <div id="intro" class ="main_row row center-text">
+        <span>Hi, I'm John and I know …</span>
       </div>
-      <div id='vote_row' class="row">
+      <div id='vote_row' class="main-row row">
         <div class = "col-md-3"></div>
-        <div id="voting" class="col-xs-12 col-md-1">
-          <div id="voting_icon" style="display: none;">
+        <div id="voting" class="col-md-1">
+          <div id="voting_icon" class="center-text" style="display: none;">
             <div class="row">
               <span class="glyphicon glyphicon-chevron-up chev up" aria-hidden="true"></span>
             </div>
-            <div class="row">
+            <div class="count-container row">
               <% @attributes.each do |a| %>
                 <%= div_for(a, class: "count") do %>
                   <%= a.net_votes %>
@@ -41,10 +41,10 @@
               <span class="glyphicon glyphicon-chevron-down chev down" aria-hidden="true"></span>
             </div>
           </div>
-          <div id="voting_sign"></div>
+          <div id="voting_sign" class="center-text"></div>
         </div>
-        <div class="col-xs-12 col-md-4">
-          <div id="typed">
+        <div class="col-md-4">
+          <div id="typed" class="center-text">
             <span class="attribute_name"></span>
           </div>
           <div id="suggest">
@@ -59,7 +59,7 @@
           </div>
         </div>
       </div>
-      <div class="row social">
+      <div class="row social center-text">
         <ul>
           <li><a href="https://www.facebook.com/john.zahka"><i class="fa fa-lg fa-facebook"></i></a></li>
           <li><a href="https://github.com/jzahka"><i class="fa fa-lg fa-github"></i></a></li>

@@ -53,7 +53,7 @@
                 <span class="input-group-btn">
                 <%= f.submit :suggest, class: "btn btn-default" %>
                 </span>
-                <%= f.text_field :name, placeholder: @attributes.sample.name, class: "form-control" %>
+                <%= f.text_field :name, placeholder: @attributes.sample.try(:name), class: "form-control" %>
               </div>
             <% end %>
           </div>

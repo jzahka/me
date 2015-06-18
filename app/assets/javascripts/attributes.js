@@ -63,7 +63,7 @@
     }
 
     function getCurrentId() {
-        return $('.count:visible').attr('id').slice(-1);
+        return $('.count:visible').attr('id').split('_')[1]
     }
 
     function getCountById(id) {

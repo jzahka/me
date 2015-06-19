@@ -35,6 +35,7 @@ gem "typedjs-rails"
 
 # Use unicorn as the app server
 gem 'unicorn'
+gem 'therubyracer'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

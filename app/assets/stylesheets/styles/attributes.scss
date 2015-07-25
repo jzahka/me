@@ -2,7 +2,7 @@
 
 $c-prim: #00BB74;
 $c-second: #4C5173;
-
+$c-third: #0EEF9A;
 .typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
@@ -64,9 +64,17 @@ $c-second: #4C5173;
   top: 15px;
 }
 
+.up:hover {
+  color: $c-third;
+}
+
 .down {
   position: relative;
   top: -10px;
+}
+
+.down:hover {
+  color: $c-third;
 }
 
 .count {
@@ -125,6 +133,16 @@ $c-second: #4C5173;
   height: 100px;
   margin: 0 auto;
 }
+
+.example-appear {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+}
+
 .social {
     position: relative;
     top: 30px;

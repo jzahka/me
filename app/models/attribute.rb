@@ -11,6 +11,6 @@ class Attribute < ActiveRecord::Base
   end
 
   def down_vote
-    self.down_vote += 1
+    self.down_votes += 1
   end
 end

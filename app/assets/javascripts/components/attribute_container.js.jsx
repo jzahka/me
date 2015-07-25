@@ -24,7 +24,7 @@
         <div id='vote_row' className="main-row row">
           <div className="col-md-3"></div>
           <div id="voting" className="col-md-1">
-            <Me.Voter
+            <Me.VoterContainer
               votes={votes}
               onUpVote={this.handleUpVote}
               onDownVote={this.handleDownVote}

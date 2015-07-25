@@ -6,15 +6,37 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Me</title>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-<%= yield :javascripts %>
-<%= javascript_tag do %>
-$(document).ready(function() {
-  <%= yield :document_ready %>
-});
-<% end %>
-<%= yield %>
-
+  <div id="main-container" class="container-fluid">
+    <div class="main_row row">
+      <%= image_tag "banner.jpg", id: 'banner', class: "img-responsive" %>
+    </div>
+    <%= yield %>
+    <%= yield :javascripts %>
+    <div class="row social center-text">
+      <ul>
+        <li><a href="https://www.facebook.com/john.zahka"><i class="fa fa-lg fa-facebook"></i></a></li>
+        <li><a href="https://github.com/jzahka"><i class="fa fa-lg fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/pub/john-zahka/3a/26/821"><i class="fa fa-lg fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+    <div class="image row">
+      <%= image_tag "logo.svg", id: 'logo', class: "img-responsive" %>
+    </div>
+  </div>
 </body>
 </html>

@@ -5,4 +5,12 @@ class Attribute < ActiveRecord::Base
   def net_votes
     up_votes - down_votes
   end
+
+  def up_vote
+    self.up_votes += 1
+  end
+
+  def down_vote
+    self.down_votes += 1
+  end
 end

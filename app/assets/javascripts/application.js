@@ -13,7 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require namespace
+//= require components
 //= require typed
 //= require bootstrap-sprockets
+//= require lodash
 //= ––– add plugins above here ––––
 //= require_tree .

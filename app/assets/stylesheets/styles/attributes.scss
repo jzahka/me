@@ -2,7 +2,7 @@
 
 $c-prim: #00BB74;
 $c-second: #4C5173;
-
+$c-third: #0EEF9A;
 .typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
@@ -64,9 +64,17 @@ $c-second: #4C5173;
   top: 15px;
 }
 
+.up:hover {
+  color: $c-third;
+}
+
 .down {
   position: relative;
   top: -10px;
+}
+
+.down:hover {
+  color: $c-third;
 }
 
 .count {
@@ -77,8 +85,15 @@ $c-second: #4C5173;
 
 #voting_sign {
   position: relative;
-  top: 20px;
-  font-size: 60px;
+  top: 31px;
+  font-size: 40px;
+  .glyphicon-plus {
+    color: #009999
+  }
+
+  .glyphicon-minus {
+    color: #FF5050
+  }
 }
 
 #voting {
@@ -95,6 +110,10 @@ $c-second: #4C5173;
   margin: 0 auto;
   float: none;
   max-width: 400px;
+
+  .glyphicon-ok {
+    color: $c-prim;
+  }
 }
 
 #attribute_name:disabled {
@@ -125,6 +144,16 @@ $c-second: #4C5173;
   height: 100px;
   margin: 0 auto;
 }
+
+.voter-transition-appear {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.voter-transition-appear.voter-transition-appear-active {
+  opacity: 1;
+}
+
 .social {
     position: relative;
     top: 30px;

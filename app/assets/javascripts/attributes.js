@@ -2,8 +2,8 @@
     "use strict"
 
     function init(attribute_names) {
-        initTyped(attribute_names);
-        initVoting();
+        // initTyped(attribute_names);
+        // initVoting();
         initSuggest();
     }
 

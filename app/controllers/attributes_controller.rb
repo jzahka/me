@@ -1,7 +1,14 @@
 class AttributesController < ApplicationController
   def index
-    @attribute = Attribute.new
-    @attributes = Attribute.where(enabled: true).all.shuffle
+    @attributes = Attribute.where(enabled: true).
+      map{ |a| a.slice(:id, :name, :net_votes) }.
+      shuffle
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: @attributes
+      end
+    end
   end
 
   def create
@@ -14,12 +21,12 @@ class AttributesController < ApplicationController
     attribute = Attribute.find(params[:id])
     case params[:vote]
     when 'up'
-      attribute.up_votes += 1
+      attribute.up_vote
     when 'down'
-      attribute.down_votes += 1
+      attribute.down_vote
     end
     attribute.save!
-    render json: { id: attribute.id, net: attribute.net_votes }
+    render nothing: true
   end
 
   private

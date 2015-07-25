@@ -110,6 +110,10 @@ $c-third: #0EEF9A;
   margin: 0 auto;
   float: none;
   max-width: 400px;
+
+  .glyphicon-ok {
+    color: $c-prim;
+  }
 }
 
 #attribute_name:disabled {

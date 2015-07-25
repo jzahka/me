@@ -13,9 +13,30 @@
     },
 
     getInitialState: function() {
-      return {value: ''};
+      return {
+        value: '',
+        justSuggested: false,
+      };
     },
+
+    componentWillReceiveProps: function(nextProps) {
+      this.setState({justSuggested: false})
+    },
+
     render: function() {
+      var icon;
+      if (this.state.justSuggested) {
+        icon = (
+          <ReactCSSTransitionGroup
+            transitionName="voter-transition"
+            transitionAppear={true}
+          >
+            <span className="glyphicon glyphicon-ok" />
+          </ReactCSSTransitionGroup>
+        )
+      } else {
+        icon = <span className="glyphicon glyphicon-pencil" />
+      }
       return (
         <div id="suggest">
           <form onSubmit={this.onSumbmit}>
@@ -33,6 +54,7 @@
                 onChange={this.handleChange}
                 aria-describedby="basic-addon1"
               />
+              <span className="input-group-addon">{icon}</span>
             </div>
           </form>
         </div>
@@ -42,7 +64,7 @@
     onSumbmit: function(e) {
       e.preventDefault();
       this.props.onSubmit(this.state.value);
-      this.setState({value: ''});
+      this.setState({value: '', justSuggested: true});
     }
 
   });

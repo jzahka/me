@@ -8,7 +8,12 @@
 
     render: function() {
       return (
-        <Me.AttributeContainer attributes={this.props.attributes} />
+        <div>
+          <div id="intro" className="main_row row center-text">
+            <span>Hi, I'm John and I know …</span>
+          </div>
+          <Me.AttributeContainer attributes={this.props.attributes} />
+        </div>
       );
     }
 

@@ -1,12 +1,13 @@
 class AttributesController < ApplicationController
   def index
-    @attributes = Attribute.where(enabled: true).
-      map{ |a| a.slice(:id, :name, :net_votes) }.
-      shuffle
     respond_to do |format|
       format.html
       format.json do
-        render json: @attributes
+        render json: MultiJson.dump(
+          Attribute.where(enabled: true).
+            map{ |a| a.slice(:id, :name, :net_votes) }.
+            shuffle
+        )
       end
     end
   end

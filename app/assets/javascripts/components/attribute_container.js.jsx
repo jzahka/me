@@ -3,13 +3,10 @@
 
   Me.AttributeContainer = React.createClass({
 
-    propTypes: {
-      attributes: React.PropTypes.array.isRequired
-    },
-
     getInitialState: function() {
       return {
         currentIndex: 0,
+        attributes: []
       };
     },
 
@@ -17,9 +14,14 @@
       this.setState({currentIndex: pos});
     },
 
+    componentDidMount: function() {
+      this._getAttributes();
+      setInterval(this._getAttributes, 30000);
+    },
+
     render: function() {
-      var attributeNames = _.map(this.props.attributes, "name");
-      var votes = _.map(this.props.attributes, "net_votes")[this.state.currentIndex];
+      var attributeNames = _.map(this.state.attributes, "name");
+      var votes = _.map(this.state.attributes, "net_votes")[this.state.currentIndex];
       return (
         <div id='vote_row' className="main-row row">
           <div className="col-md-3"></div>
@@ -67,6 +69,15 @@
           data: {attribute: {name: suggested_attribute}}
         }
       );
+    },
+
+    _getAttributes: function() {
+      var that = this;
+      $.getJSON('/attributes/', {},
+        function(data) {
+          that.setState({attributes: data});
+        }
+      )
     },
 
     _currentAttribute: function() {

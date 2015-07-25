@@ -3,7 +3,7 @@
 
   Me.VoterContainer = React.createClass({
     propTypes: {
-      votes: React.PropTypes.number.isRequired,
+      votes: React.PropTypes.number,
       onUpVote: React.PropTypes.func,
       onDownVote: React.PropTypes.func
     },

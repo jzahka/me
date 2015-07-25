@@ -3,7 +3,7 @@
 
   Me.Voter = React.createClass({
     propTypes: {
-      votes: React.PropTypes.number.isRequired,
+      votes: React.PropTypes.number,
       onUpVote: React.PropTypes.func,
       onDownVote: React.PropTypes.func
     },
@@ -24,7 +24,7 @@
               />
             </div>
             <div>
-              <div className="count">{this.props.votes}</div>
+              <div className="count">{this.props.votes || 0}</div>
             </div>
             <div>
               <span

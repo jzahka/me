@@ -19,7 +19,7 @@
       }
       return (
         <ReactCSSTransitionGroup
-          transitionName="example"
+          transitionName="voter-transition"
           transitionAppear={true}
         >
           <div id="voting_sign" className="center-text">

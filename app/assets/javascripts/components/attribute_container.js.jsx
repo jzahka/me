@@ -20,6 +20,7 @@
     render: function() {
       var attributeNames = _.map(this.props.attributes, "name");
       var votes = _.map(this.props.attributes, "net_votes")[this.state.currentIndex];
+      var placeholder = _.sample(attributeNames);
       return (
         <div id='vote_row' className="main-row row">
           <div className="col-md-3"></div>
@@ -34,6 +35,10 @@
             <Me.TypedAttributes
               attributeNames={attributeNames}
               onUpdate={this.onUpdate}
+            />
+            <Me.Suggest
+              onSubmit={this._handleSuggestion}
+              placeholder={placeholder}
             />
           </div>
         </div>
@@ -53,6 +58,15 @@
         {
           method: "PUT",
           data: { vote: direction }
+        }
+      );
+    },
+
+    _handleSuggestion: function(suggested_attribute) {
+      $.ajax('/attributes/',
+        {
+          method: "POST",
+          data: {attribute: {name: suggested_attribute}}
         }
       );
     },

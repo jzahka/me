@@ -141,12 +141,12 @@ $c-third: #0EEF9A;
   margin: 0 auto;
 }
 
-.example-appear {
+.voter-transition-appear {
   opacity: 0.01;
   transition: opacity .5s ease-in;
 }
 
-.example-appear.example-appear-active {
+.voter-transition-appear.voter-transition-appear-active {
   opacity: 1;
 }
 

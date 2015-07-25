@@ -11,7 +11,7 @@
     render: function() {
       return (
         <ReactCSSTransitionGroup
-          transitionName="example"
+          transitionName="voter-transition"
           transitionAppear={true}
         >
           <div id="voting_icon" className="center-text">

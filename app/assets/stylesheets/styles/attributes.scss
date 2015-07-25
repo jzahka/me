@@ -85,8 +85,15 @@ $c-third: #0EEF9A;
 
 #voting_sign {
   position: relative;
-  top: 20px;
-  font-size: 60px;
+  top: 31px;
+  font-size: 40px;
+  .glyphicon-plus {
+    color: #009999
+  }
+
+  .glyphicon-minus {
+    color: #FF5050
+  }
 }
 
 #voting {

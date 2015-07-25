@@ -15,6 +15,7 @@
     },
 
     componentWillReceiveProps: function(nextProps) {
+      // trigger voter to show up on new props
       this.setState({justVoted: null});
     },
 

@@ -5,7 +5,6 @@
 
     propTypes: {
       onSumbmit: React.PropTypes.func,
-      placeholder: React.PropTypes.string
     },
 
     handleChange: function(event) {
@@ -49,7 +48,7 @@
               <input
                 type="text"
                 className="form-control"
-                placeholder={this.props.placeholder}
+                placeholder={"Anything I missed?"}
                 value={this.state.value}
                 onChange={this.handleChange}
                 aria-describedby="basic-addon1"

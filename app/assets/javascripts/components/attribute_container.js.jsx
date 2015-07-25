@@ -20,7 +20,6 @@
     render: function() {
       var attributeNames = _.map(this.props.attributes, "name");
       var votes = _.map(this.props.attributes, "net_votes")[this.state.currentIndex];
-      var placeholder = _.sample(attributeNames);
       return (
         <div id='vote_row' className="main-row row">
           <div className="col-md-3"></div>
@@ -38,7 +37,6 @@
             />
             <Me.Suggest
               onSubmit={this._handleSuggestion}
-              placeholder={placeholder}
             />
           </div>
         </div>

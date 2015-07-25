@@ -8,14 +8,14 @@
     },
 
     componentDidMount: function() {
-      $(".attribute").typed({
-        strings: this.props.attributeNames,
-        typeSpeed: 20,
-        backDelay: 2000,
-        startDelay: 1000,
-        loop: true,
-        preStringTyped: this.props.onUpdate
-      });
+      this._setTyped(this.props.attributeNames);
+    },
+
+    componentWillReceiveProps: function(nextProps) {
+      if (!_.eq(this.props.attributeNames, nextProps.attributeNames)) {
+        $(".attribute").typed('reset');
+        this._setTyped(nextProps.attributeNames);
+      }
     },
 
     render: function() {
@@ -25,6 +25,19 @@
         </div>
       );
 
+    },
+
+    _setTyped: function(attributeNames) {
+      var attributeClone = $(".attribute").clone();
+      $(".attribute").typed({
+        strings: attributeNames,
+        typeSpeed: 20,
+        backDelay: 2000,
+        startDelay: 1000,
+        loop: true,
+        preStringTyped: this.props.onUpdate,
+        resetCallback: function() { $("#typed").append(attributeClone); }
+      });
     }
   });
 

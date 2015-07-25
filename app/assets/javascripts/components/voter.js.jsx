@@ -20,6 +20,7 @@
                 className="glyphicon glyphicon-chevron-up chev up"
                 aria-hidden="true"
                 onClick={this._handleUpVote}
+                onTouchEnd={this._handleUpVote}
               />
             </div>
             <div>
@@ -30,6 +31,7 @@
                 className="glyphicon glyphicon-chevron-down chev down"
                 aria-hidden="true"
                 onClick={this._handleDownVote}
+                onTouchEnd={this._handleDownVote}
               />
             </div>
           </div>

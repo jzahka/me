@@ -16,7 +16,7 @@
 
     componentDidMount: function() {
       this._getAttributes();
-      setInterval(this._getAttributes, 10000);
+      setInterval(this._getAttributes, 30000);
     },
 
     render: function() {

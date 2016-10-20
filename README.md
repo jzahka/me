@@ -1,7 +1,6 @@
 # Personal Website
-A tiny Rails app with user interface built in React, hosted on Digital Ocean.
+A tiny Rails app with user interface built in React.
 
-Take a look! [johnzahka.com](http://johnzahka.com/)
 ## Features
 * Vote on my endorsements, anything from Rails to Making Delicious Paninis.
 * Suggest endorsements.
